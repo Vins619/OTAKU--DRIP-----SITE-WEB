@@ -1,65 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A propos</title>
-    <link rel="icon" href="IMAGE/logo.png" type="image/x=icon">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>T-shirts Otaku - Ouzz Otaku Drip</title>
+  <link rel="icon" href="IMAGE/logo.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    h2 {
+      color: #b30000;
+      margin: 40px 0 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .produit-card {
+      background-color: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+      transition: transform 0.3s;
+    }
+    .produit-card:hover {
+      transform: scale(1.05);
+    }
+    .produit-card img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+      max-height: 250px;
+    }
+    .btn-otaku {
+      background-color: #b30000;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 30px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .btn-otaku:hover {
+      background-color: #8b0000;
+    }
+  </style>
 </head>
 <body>
-<section class="header-section">
-<div class="content">
-      <header class="navbar">
-        <div class="logo">
-            <img src="IMAGE/logo.png" alt="OUZZ OTAKU DRIP logo" > <h1>Bienvenue sur notre site Ouzz Otaku Drip </h1>
-</div>
- <nav>
-       <ul>
-        
-            <li><a href="index.html">Acceuil</a></li>
-            <li><a href="Produits.html">Produits</a></li>
-            <li><a href="A propos.html">A propos</a></li>
-            <li><a href="A propos.html">Contacts</a></li>
-            <li><a href="A propos.html">Nos Comptes</a></li>
-            
-       </ul>
+
+  <nav class="navbar-custom d-flex justify-content-between align-items-center px-4" style="background-color: black; padding: 20px;">
+    <div class="logo d-flex align-items-center gap-3">
+      <img src="IMAGE/logo.png" alt="Logo" width="60" />
+      <h1 class="text-white fs-4 m-0">Ouzz Otaku Drip</h1>
+    </div>
+    <div>
+      <a href="index.html" class="text-white me-3 text-decoration-none"><i class="bi bi-house"></i> Accueil</a>
+      <a href="A propos.html" class="text-white me-3 text-decoration-none"><i class="bi bi-info-circle"></i> À propos</a>
+      <a href="Nos comptes.html" class="text-white me-3 text-decoration-none"><i class="bi bi-person"></i> Nos Comptes</a>
+      <a href="Panier.html" class="text-white text-decoration-none"><i class="bi bi-cart"></i> Panier</a>
+    </div>
   </nav>
-</header>
-</section>
 
-<section class="t-shirt">
-    <h1>Les T-shirts!</h1>
-    <br>
-            <div>
-            <h2>Les T-shirt One Piece</h2>
-            </div>
-            <img src="IMAGE/one piece t-shirt5.jpg" alt="">
-            <img src="IMAGE/one piece t-shirt3.jpeg" alt="">
-            <img src="IMAGE/one piece t-shirt4.jpeg" alt="">
-            
-</section>
-<section class="t-shirt">
-  <h1>Les T-shirt Dragon ball!</h1>
-  <br>
-          <div>
-          <h2>Les T-shirt Dragon Ball</h2>
-          </div>
-          <img src="IMAGE/dragon ball t-shirt1.jpeg" alt="">
-          <img src="IMAGE/dragon ball t-shirt2.jpeg" alt="">
-          <img src="IMAGE/dragon ball t-shirt3.jpeg" alt="">
-          
-</section>
+  <div class="container py-5">
+    <h2>T-shirts Otaku</h2>
+    <div class="row" id="produits-container"></div>
+  </div>
 
-<section class="t-shirt">
-  <h1>Les T-shirt Dragon ball!</h1>
-  <br>
-          <div>
-          <h2>Les T-shirt BLeach</h2>
+  <script>
+    const produits = [
+      { nom: "T-shirt Otaku 1", image: "https://th.bing.com/th/id/OIP.-jBzUupXhEdMfblOaoolOwHaHa?w=205&h=205&c=7&r=0&o=7&pid=1.7&rm=3 ", prix: 5000, description: "Taille M" },
+      { nom: "T-shirt Otaku 2", image: " data:image/webp;base64,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", prix: 5100, description: "Taille L" },
+      { nom: "T-shirt Otaku 3", image: "https://th.bing.com/th/id/OIP.Ss6MqbX-Ud2xeHAVdbVTqgHaHN?w=198&h=193&c=7&r=0&o=7&pid=1.7&rm=3 ", prix: 5200, description: "Taille XL" },
+      { nom: "T-shirt Otaku 4", image: "data:image/webp;base64,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 ", prix: 5300, description: "Taille M" },
+      { nom: "T-shirt Otaku 5", image: " https://th.bing.com/th/id/OIP.Bx9wN4vInTC_RdLO0A1RsAHaHa?w=216&h=216&c=7&r=0&o=7&pid=1.7&rm=3", prix: 5400, description: "Taille L" },
+      { nom: "T-shirt Otaku 6", image: "data:image/webp;base64,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 ", prix: 5500, description: "Taille XL" },
+      { nom: "T-shirt Otaku 7", image: " https://th.bing.com/th/id/OIP.IUgJcNjx0AOEVc_lfU9kFAHaHa?w=200&h=200&c=7&r=0&o=7&pid=1.7&rm=3", prix: 5600, description: "Taille M" },
+      { nom: "T-shirt Otaku 8", image: " https://th.bing.com/th/id/OIP.2tflHiga8O45MB0_YQY4WAHaHa?w=184&h=184&c=7&r=0&o=7&pid=1.7&rm=3", prix: 5700, description: "Taille L" },
+      { nom: "T-shirt Otaku 9", image: " data:image/webp;base64,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", prix: 5800, description: "Taille XL" },
+      { nom: "T-shirt Otaku 10", image: " https://th.bing.com/th/id/OIP.adTjfJ2G8DT_pz1_17EtEwHaHa?w=206&h=206&c=7&r=0&o=7&pid=1.7&rm=3", prix: 5900, description: "Taille M" },
+      { nom: "T-shirt Otaku 11", image: " data:image/webp;base64,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 ", prix: 6000, description: "Taille L" },
+      { nom: "T-shirt Otaku 12", image: "https://th.bing.com/th/id/OIP.juhJ9XyG9y4dBQqUbN1uggHaHa?w=197&h=197&c=7&r=0&o=7&pid=1.7&rm=3 ", prix: 7000, description: "Taille XL" }
+    ];
+
+    const container = document.getElementById('produits-container');
+
+    function addToCart(nom, image, prix, description = '') {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const index = cart.findIndex(item => item.nom === nom && item.description === description);
+
+      if (index !== -1) {
+        cart[index].quantite += 1;
+      } else {
+        cart.push({ nom, image, prix, description, quantite: 1 });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`"${nom}" a été ajouté au panier !`);
+    }
+
+    function afficherProduits() {
+      produits.forEach(p => {
+        const div = document.createElement('div');
+        div.classList.add('col-md-4', 'col-lg-3');
+        div.innerHTML = `
+          <div class="produit-card">
+            <img src="${p.image || 'https://via.placeholder.com/300x250?text=Image+à+venir'}" alt="${p.nom}" />
+            <h5 class="mt-3">${p.nom}</h5>
+            <p>${p.description}</p>
+            <p><strong>${p.prix.toLocaleString('fr-FR')} FCFA</strong></p>
+            <button class="btn-otaku" onclick="addToCart('${p.nom}', '${p.image}', ${p.prix}, '${p.description}')">Ajouter au panier</button>
           </div>
-          <img src="IMAGE/t-shirt bleach.jpeg" alt="">
-          <img src="IMAGE/t-shirt bleach 4.jpeg" alt="">
-          <img src="IMAGE/t-shirt bleach3.jpeg" alt="">
-          
-</section>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    afficherProduits();
+  </script>
+
 </body>
+</html>

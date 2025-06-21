@@ -1,29 +1,97 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A propos</title>
-    <link rel="icon" href="IMAGE/logo.png" type="image/x=icon">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>À propos - Ouzz Otaku Drip</title>
+  <link rel="icon" href="IMAGE/logo.png" type="image/x-icon">
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #121212;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+    }
+
+    .navbar-custom {
+      background-color: black;
+      padding: 20px;
+    }
+
+    .navbar-custom a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .navbar-custom a:hover {
+      color: #b30000;
+    }
+
+    .navbar-custom i {
+      margin-right: 6px;
+    }
+
+    .logo img {
+      width: 60px;
+      border-radius: 12px;
+    }
+
+    .apropos-section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .apropos-section h2 {
+      color: #b30000;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .apropos-section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: auto;
+      color: #e0e0e0;
+    }
+  </style>
 </head>
 <body>
-<section class="header-section">
-<div class="content">
-      <header class="navbar">
-        <div class="logo">
-            <img src="IMAGE/logo.png" alt="OUZZ OTAKU DRIP logo" > <h1>Bienvenue sur notre site Ouzz Otaku Drip </h1>
-</div>
- <nav>
-       <ul>
-        
-            <li><a href="index.html">Acceuil</a></li>
-            <li><a href="Produits.html">Produits</a></li>
-            <li><a href="A propos.html">A propos</a></li>
-            <li><a href="A propos.html">Contacts</a></li>
-            <li><a href="A propos.html">Nos Comptes</a></li>
-            
-       </ul>
+
+  <!-- Navbar -->
+  <nav class="navbar-custom d-flex justify-content-between align-items-center px-4">
+    <div class="logo d-flex align-items-center gap-3">
+      <img src="IMAGE/logo.png" alt="Logo">
+      <h1 class="text-white fs-4 m-0">Ouzz Otaku Drip</h1>
+    </div>
+    <div>
+      <a href="index.html"><i class="bi bi-house"></i>Accueil</a>
+      <a href="A propos.html"><i class="bi bi-info-circle"></i>À propos</a>
+      <a href="Nos comptes.html"><i class="bi bi-person"></i>Nos Comptes</a>
+      <a href="Panier.html"><i class="bi bi-cart"></i>Panier</a>
+    </div>
   </nav>
-</header>
-</section>
+
+  <!-- À propos -->
+  <section class="apropos-section">
+    <h2>À propos de Ouzz Otaku Drip</h2>
+    <p>
+      Ouzz Otaku Drip, c’est plus qu’une marque. C’est un cri de passion venu tout droit du cœur d’un otaku africain qui vit ses animés à fond, chaque jour.  
+      <br><br>
+      Notre mission ? Offrir aux fans d’anime du Sénégal (et du monde entier) une marque qui parle leur langage. Nos vêtements ne sont pas seulement stylés — ils racontent une histoire, une émotion, une scène culte.  
+      <br><br>
+      De Naruto à Luffy, en passant par Itachi, Guts ou Eren, nous réinterprétons les vibes otaku en mode streetwear avec fierté.  
+      <br><br>
+      Ici, on ne cache pas notre passion, on la porte haut et fort. Bienvenue dans un univers fait par un otaku, pour les otakus. ✊🔥
+    </p>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
